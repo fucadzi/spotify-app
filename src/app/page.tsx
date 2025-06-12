@@ -30,9 +30,10 @@ export default function Home() {
     }, [clientId, clientSecret, token, tokenExpiry]);
 
     return (
-        <div className="items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+        <div className="items-center justify-items-center min-h-screen p-2 md:p-8">
             <main className={styles.page}>
-                <div className="flex">
+                <div className="flex flex-col">
+                    <h2 className={styles.title}>Spotify Track Search</h2>
                     <Search token={token} />
                 </div>
             </main>
