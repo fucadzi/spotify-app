@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useEffect } from 'react';
 import Search from '@/components/Search';
 import styles from '@/app/page.module.scss';

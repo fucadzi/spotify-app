@@ -1,0 +1,19 @@
+.menu {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 16px;
+    font-size: 18px;
+
+    a {
+        padding: 4px 2px;
+        color: var(--secondary-text);
+    }
+
+    .active {
+        font-weight: 600;
+        color: var(--primary-text);
+        border-bottom: 3px solid var(--primary-text);
+    }
+}
