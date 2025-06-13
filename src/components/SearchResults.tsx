@@ -1,10 +1,10 @@
 import { SpotifyTrack } from '@/app/types/spotify';
 import styles from '@/components/searchResults.module.scss';
 import Image from 'next/image';
-import { useMainStore } from '@/store/mainStore';
+import { useFavouritesStore } from '@/store/favouritesStore';
 
 export default function SearchResults({ tracks }: { tracks: SpotifyTrack[] }) {
-    const { favourites, toggleFavourites } = useMainStore();
+    const { favourites, toggleFavourites } = useFavouritesStore();
     const isFavourite = (id: string) => favourites.some(track => track.id === id);
 
     return (
