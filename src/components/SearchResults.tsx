@@ -1,21 +1,10 @@
 import { SpotifyTrack } from '@/app/types/spotify';
 import styles from '@/components/searchResults.module.scss';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useMainStore } from '@/store/mainStore';
 
 export default function SearchResults({ tracks }: { tracks: SpotifyTrack[] }) {
-    const [favourites, setFavourites] = useState<SpotifyTrack[]>([]);
-
-    const toggleFavourites = (id: string) => {
-        const fav = tracks.find((track) => track.id === id);
-        if (!fav) return;
-        if (isFavourite(fav.id)) {
-            setFavourites(favourites.filter(track => track && track.id !== id));
-        } else {
-            setFavourites([fav, ...favourites]);
-        }
-    }
-
+    const { favourites, toggleFavourites } = useMainStore();
     const isFavourite = (id: string) => favourites.some(track => track.id === id);
 
     return (
@@ -42,7 +31,7 @@ export default function SearchResults({ tracks }: { tracks: SpotifyTrack[] }) {
                             </div>
                         </div>
                         <div className={styles.action}>
-                            <button onClick={() => toggleFavourites(track.id)}>
+                            <button onClick={() => toggleFavourites(track)}>
                                 <i
                                     className={`mdi ${isFavourite(track.id) ? 'mdi-heart' : 'mdi-heart-outline'}`}
                                 />
