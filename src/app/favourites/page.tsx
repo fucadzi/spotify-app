@@ -3,6 +3,7 @@ import styles from '@/app/page.module.scss';
 import favStyles from '@/app/favourites/favourites.module.scss';
 import { useFavouritesStore } from '@/store/favouritesStore';
 import Image from 'next/image';
+import { SpotifyTrack } from '@/app/types/spotify';
 
 export default function FavouritesPage() {
     const { favourites, removeFavourite } = useFavouritesStore();

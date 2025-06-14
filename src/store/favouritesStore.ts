@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { SpotifyTrack } from '@/app/types/spotify';
 
 type FavouritesStore = {
     favourites: SpotifyTrack[];
