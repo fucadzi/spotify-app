@@ -1,0 +1,42 @@
+.favouritesList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+
+    .favourite {
+        flex-shrink: 0;
+        max-width: 160px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background-color: #fff;
+        position: relative;
+        
+        .albumCover {
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+
+        .about {
+            padding: 12px;
+            font-size: 14px;
+            color: var(--secondary-text);
+
+            .trackName {
+                color: var(--primary-text);
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            .remove {
+                position: absolute;
+                bottom: 4px;
+                right: 8px;
+                font-size: 18px;
+                color: var(--border-grey);
+                cursor: pointer;
+            }
+        }
+    }
+}
+

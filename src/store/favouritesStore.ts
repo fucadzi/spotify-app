@@ -3,6 +3,7 @@ import { create } from 'zustand';
 type FavouritesStore = {
     favourites: SpotifyTrack[];
     toggleFavourites: (track: SpotifyTrack) => void;
+    removeFavourite: (track: SpotifyTrack) => void;
 };
 
 export const useFavouritesStore = create<FavouritesStore>((set) => ({
@@ -17,4 +18,7 @@ export const useFavouritesStore = create<FavouritesStore>((set) => ({
             : [track, ...state.favourites],
         };
         }),
+    removeFavourite: (track) => set((state) => { 
+        return { favourites : state.favourites.filter((t) => t.id !== track.id) }
+    }),
 }));
