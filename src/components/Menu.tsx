@@ -7,7 +7,7 @@ export default function NavMenu() {
     const pathname = usePathname();
 
     return (
-        <nav className={`${styles.menu} p-2 md:p-8`}>
+        <nav className={`${styles.menu} pt-2 px-2 md:pt-8 md:px-8`}>
             <Link href="/" className={pathname === '/' ? styles.active : ''}>Search</Link>
             <Link href="/favourites" className={pathname === '/favourites' ? styles.active : ''}>Favourites</Link>
         </nav>
