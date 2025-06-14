@@ -24,7 +24,7 @@ export default function Search({ token }: { token: string | null }) {
     return (
         <div className={styles.search}>
             <div className={styles.searchWrap}>
-                <input className={styles.input} placeholder='What song are you looking for?' value={query} onChange={e => setQuery(e.target.value)} />
+                <input className={styles.input} name='search' placeholder='What song are you looking for?' value={query} onChange={e => setQuery(e.target.value)} />
                 <button className={styles.button} onClick={handleSearch}>Search</button>
             </div>
             {loading ? (
