@@ -5,7 +5,7 @@ import styles from '@/app/page.module.scss';
 import { useMainStore } from '@/store/mainStore';
 
 export default function Home() {
-    const { token, getToken } = useMainStore();
+    const { token, getToken, errorMessage } = useMainStore();
 
     useEffect(() => {
         // requesting spotify access token
@@ -17,7 +17,11 @@ export default function Home() {
             <main className={styles.page}>
                 <div className="flex flex-col">
                     <h2 className={styles.title}>Spotify Track Search</h2>
-                    <Search token={token} />
+                    {errorMessage ? (
+                        <div className={styles.error}><i className={`mdi mdi-alert`}/> {errorMessage}</div>
+                    ) : (
+                        <Search token={token} />
+                    )}
                 </div>
             </main>
         </div>
